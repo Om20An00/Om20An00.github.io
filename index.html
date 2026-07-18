@@ -4,538 +4,404 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Om Anand Dubey — Backend Engineer</title>
-<meta name="description" content="Om Anand Dubey — Backend Engineer. Go, Java/Spring Boot, Kafka, Kubernetes. Top 0.1% LeetCode. Ex-TCS.">
+<meta name="description" content="Om Anand Dubey — Backend Engineer. Go, Java/Spring Boot, Kafka, Kubernetes. Ex-TCS.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0e14;
-    --panel:#10151d;
-    --panel-2:#141b26;
-    --line:#212b38;
-    --text:#e6ebf2;
-    --muted:#7b8899;
-    --muted-2:#4c5a6c;
-    --teal:#5eead4;
-    --amber:#f5a623;
-    --red:#ef6461;
+    --bg:#0d1117;
+    --panel:#161b22;
+    --panel-2:#1c2129;
+    --border:#30363d;
+    --text:#c9d1d9;
+    --text-hi:#e6edf3;
+    --muted:#8b949e;
     --violet:#a78bfa;
-    --mono: 'JetBrains Mono', ui-monospace, monospace;
-    --sans: 'Inter', system-ui, sans-serif;
-    --radius: 3px;
+    --violet-dim:#7c6ae0;
+    --sans:'Inter', system-ui, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
   }
-
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
   body{
     background:var(--bg);
     color:var(--text);
     font-family:var(--sans);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+    line-height:1.65;
+    font-size:16px;
   }
-  body::before{
-    content:"";
-    position:fixed; inset:0;
-    background-image:
-      linear-gradient(rgba(94,234,212,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(94,234,212,0.025) 1px, transparent 1px);
-    background-size: 42px 42px;
-    pointer-events:none;
-    z-index:0;
-  }
-  a{color:inherit; text-decoration:none;}
-  ::selection{background:var(--teal); color:#04140f;}
-  :focus-visible{outline:2px solid var(--teal); outline-offset:2px;}
+  a{color:var(--violet); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  ::selection{background:var(--violet); color:#0d1117;}
+  :focus-visible{outline:2px solid var(--violet); outline-offset:2px;}
 
-  .wrap{max-width:1080px; margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+  .wrap{max-width:860px; margin:0 auto; padding:0 24px;}
 
   /* ---------- NAV ---------- */
   nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(10,14,20,0.86);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
+    border-bottom:1px solid var(--border);
+    background:var(--bg);
+    position:sticky; top:0; z-index:20;
   }
   .nav-inner{
+    max-width:860px; margin:0 auto; padding:16px 24px;
     display:flex; align-items:center; justify-content:space-between;
-    padding:16px 28px; max-width:1080px; margin:0 auto;
   }
-  .logo{
-    font-family:var(--mono); font-weight:700; font-size:14px; letter-spacing:0.02em;
-    display:flex; align-items:center; gap:9px;
-  }
-  .logo .dot{width:8px; height:8px; border-radius:50%; background:var(--teal); box-shadow:0 0 8px var(--teal); animation:pulse 2.2s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
-  .navlinks{display:flex; gap:26px; font-family:var(--mono); font-size:12px; letter-spacing:0.06em;}
-  .navlinks a{color:var(--muted); transition:color 0.15s; position:relative; padding:4px 0;}
-  .navlinks a:hover, .navlinks a:focus-visible{color:var(--teal);}
-  .navlinks a .idx{color:var(--muted-2); margin-right:6px;}
-  .navtoggle{display:none; background:none; border:1px solid var(--line); color:var(--text); font-family:var(--mono); padding:6px 10px; border-radius:var(--radius); cursor:pointer;}
-
-  @media (max-width:760px){
-    .navlinks{
-      position:absolute; top:100%; left:0; right:0;
-      background:var(--panel); border-bottom:1px solid var(--line);
-      flex-direction:column; gap:0; padding:8px 0; display:none;
-    }
+  .nav-name{font-weight:700; color:var(--text-hi); font-size:15px;}
+  .navlinks{display:flex; gap:22px; font-size:14px;}
+  .navlinks a{color:var(--muted);}
+  .navlinks a:hover{color:var(--violet); text-decoration:none;}
+  .navtoggle{display:none; background:none; border:1px solid var(--border); color:var(--text); padding:6px 10px; border-radius:6px; cursor:pointer;}
+  @media (max-width:640px){
+    .navlinks{display:none; position:absolute; top:100%; left:0; right:0; background:var(--panel); border-bottom:1px solid var(--border); flex-direction:column; padding:8px 0;}
     .navlinks.open{display:flex;}
-    .navlinks a{padding:12px 28px; width:100%;}
+    .navlinks a{padding:10px 24px;}
     .navtoggle{display:block;}
   }
 
-  section{padding:88px 0; border-bottom:1px solid var(--line); position:relative;}
-  .eyebrow{
-    font-family:var(--mono); font-size:12px; letter-spacing:0.12em; color:var(--teal);
-    display:flex; align-items:center; gap:10px; margin-bottom:18px; text-transform:uppercase;
+  /* ---------- HERO BANNER ---------- */
+  .banner{
+    background:linear-gradient(135deg,#0f0c29 0%,#302b63 55%,#24243e 100%);
+    border-bottom:1px solid var(--border);
+    padding:64px 24px 48px;
+    text-align:center;
   }
-  .eyebrow::before{content:"//"; color:var(--muted-2);}
-  h2.title{
-    font-family:var(--mono); font-weight:700; font-size:clamp(24px,3.4vw,34px);
-    letter-spacing:-0.01em; margin-bottom:14px; color:var(--text);
+  .banner h1{
+    font-size:clamp(30px,5vw,44px); font-weight:800; color:#ffffff; letter-spacing:-0.01em; margin-bottom:10px;
   }
-  .lead{color:var(--muted); max-width:620px; font-size:15.5px;}
-
-  /* ---------- HERO ---------- */
-  .hero{padding-top:64px; padding-bottom:70px; min-height:calc(100vh - 65px); display:flex; flex-direction:column; justify-content:center;}
-  .term{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:6px;
-    overflow:hidden;
-    box-shadow:0 24px 60px -20px rgba(0,0,0,0.6);
-    margin-bottom:36px;
+  .banner .tagline{
+    color:var(--violet); font-size:clamp(14px,2vw,17px); font-weight:500; margin-bottom:26px;
   }
-  .term-bar{
-    display:flex; align-items:center; gap:8px;
-    padding:10px 14px; background:var(--panel-2); border-bottom:1px solid var(--line);
+  .badges{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;}
+  .badges img{height:28px;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:46px 0; border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  h2{
+    font-size:20px; font-weight:700; color:var(--text-hi);
+    padding-bottom:10px; border-bottom:1px solid var(--border); margin-bottom:22px;
   }
-  .term-bar span{width:10px; height:10px; border-radius:50%;}
-  .term-bar .c1{background:#ef6461;} .term-bar .c2{background:#f5a623;} .term-bar .c3{background:#5eead4;}
-  .term-bar .term-title{margin-left:8px; font-family:var(--mono); font-size:11px; color:var(--muted-2);}
-  .term-body{
-    padding:22px 24px 26px; font-family:var(--mono); font-size:13.5px; min-height:168px;
+  h2 .hash{color:var(--violet); margin-right:8px; font-weight:800;}
+  p{color:var(--text); margin-bottom:12px;}
+  p:last-child{margin-bottom:0;}
+  strong{color:var(--text-hi); font-weight:600;}
+
+  /* code block, like the readme's go struct */
+  pre{
+    background:var(--panel); border:1px solid var(--border); border-radius:8px;
+    padding:18px 20px; overflow-x:auto; font-family:var(--mono); font-size:12.8px;
+    color:var(--text); margin:18px 0;
   }
-  .term-body .ln{color:var(--muted); margin-bottom:5px; opacity:0; animation:reveal 0.3s forwards;}
-  .term-body .ln .ok{color:var(--teal);}
-  .term-body .ln .warn{color:var(--amber);}
-  .term-body .cursor{display:inline-block; width:8px; height:14px; background:var(--teal); vertical-align:middle; animation:blink 1s step-end infinite;}
-  @keyframes reveal{to{opacity:1;}}
-  @keyframes blink{50%{opacity:0;}}
+  pre .kw{color:#ff7b72;} pre .tp{color:#79c0ff;} pre .str{color:#a5d6ff;} pre .cm{color:#8b949e;}
 
-  .hero-name{
-    font-family:var(--mono); font-weight:800; letter-spacing:-0.02em;
-    font-size:clamp(34px,6.4vw,64px); line-height:1.05; margin-bottom:10px;
+  /* stats table */
+  table{width:100%; border-collapse:collapse; margin-top:8px;}
+  td, th{padding:10px 14px; border:1px solid var(--border); font-size:14.5px; text-align:left;}
+  th{background:var(--panel); color:var(--text-hi); font-weight:600;}
+  td{background:var(--panel-2);}
+
+  /* stack badges */
+  .stack-block{margin-bottom:20px;}
+  .stack-block h3{font-size:13px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:10px;}
+  .stack-block .badges{justify-content:flex-start;}
+
+  /* project cards */
+  .project{
+    background:var(--panel); border:1px solid var(--border); border-radius:8px;
+    padding:22px 24px; margin-bottom:18px;
   }
-  .hero-role{color:var(--teal); font-family:var(--mono); font-size:clamp(14px,2vw,17px); margin-bottom:22px;}
-  .hero-desc{max-width:560px; color:var(--muted); font-size:16px; margin-bottom:34px;}
+  .project h3{font-size:16.5px; color:var(--text-hi); margin-bottom:10px;}
+  .project h3 a{color:var(--text-hi);}
+  .project h3 a:hover{color:var(--violet);}
+  .project p{font-size:14.8px; color:var(--muted); margin-bottom:14px;}
+  .project .badges{justify-content:flex-start; margin-bottom:0;}
+  .project .badges img{height:24px;}
+  .project .links{margin-top:14px; display:flex; gap:16px; font-size:13.5px;}
 
-  .metrics{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden;}
-  .metric{background:var(--panel); padding:18px 16px;}
-  .metric .num{font-family:var(--mono); font-weight:700; font-size:22px; color:var(--text);}
-  .metric .num.accent{color:var(--teal);}
-  .metric .lbl{font-size:11px; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.06em; margin-top:4px;}
-  @media (max-width:640px){.metrics{grid-template-columns:repeat(2,1fr);}}
+  .other-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media (max-width:700px){.other-grid{grid-template-columns:1fr;}}
+  .other-card{background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:16px;}
+  .other-card h4{font-size:14.5px; color:var(--text-hi); margin-bottom:6px;}
+  .other-card p{font-size:13.5px; color:var(--muted); margin-bottom:10px;}
+  .other-card .badges{justify-content:flex-start; margin-bottom:10px;}
+  .other-card .badges img{height:20px;}
+  .other-card a{font-size:13px;}
 
-  .hero-cta{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
-  .btn{
-    font-family:var(--mono); font-size:13px; padding:12px 20px; border-radius:var(--radius);
-    display:inline-flex; align-items:center; gap:8px; transition:all 0.15s; border:1px solid var(--line);
+  /* experience list */
+  .exp{margin-bottom:22px;}
+  .exp:last-child{margin-bottom:0;}
+  .exp .role{font-weight:700; color:var(--text-hi); font-size:15.5px;}
+  .exp .meta{color:var(--violet); font-size:13.5px; margin-bottom:6px;}
+  .exp p{font-size:14.5px; color:var(--muted); margin-bottom:0;}
+
+  /* education list */
+  ul.clean{list-style:none;}
+  ul.clean li{
+    padding:12px 0; border-bottom:1px solid var(--border); font-size:14.8px;
   }
-  .btn.primary{background:var(--teal); color:#04140f; border-color:var(--teal); font-weight:700;}
-  .btn.primary:hover{background:#8ff3e2;}
-  .btn.ghost{color:var(--text);}
-  .btn.ghost:hover{border-color:var(--teal); color:var(--teal);}
+  ul.clean li:last-child{border-bottom:none;}
+  ul.clean li .sub{color:var(--muted); font-size:13.5px; display:block; margin-top:2px;}
 
-  /* ---------- ABOUT ---------- */
-  .about-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:48px; align-items:start;}
-  @media (max-width:760px){.about-grid{grid-template-columns:1fr;}}
-  .about-grid p{color:var(--muted); margin-bottom:14px; font-size:15.5px;}
-  .about-grid strong{color:var(--text); font-weight:600;}
-  .sidecard{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px;}
-  .sidecard .row{display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--line); font-size:13.5px;}
-  .sidecard .row:last-child{border-bottom:none;}
-  .sidecard .row .k{color:var(--muted-2); font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.05em;}
-  .sidecard .row .v{color:var(--text); text-align:right;}
+  /* github stats */
+  .gh-stats{display:flex; flex-wrap:wrap; gap:16px; justify-content:center; margin-top:8px;}
+  .gh-stats img{max-width:100%; border-radius:8px;}
 
-  /* ---------- STACK ---------- */
-  .stack-cat{margin-bottom:30px;}
-  .stack-cat h3{font-family:var(--mono); font-size:12px; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px;}
-  .pills{display:flex; flex-wrap:wrap; gap:10px;}
-  .pill{
-    display:flex; align-items:center; gap:8px;
-    background:var(--panel); border:1px solid var(--line); border-radius:20px;
-    padding:8px 14px; font-family:var(--mono); font-size:12.5px; color:var(--text);
-    transition:border-color 0.15s;
-  }
-  .pill:hover{border-color:var(--teal);}
-  .pill .pdot{width:6px; height:6px; border-radius:50%; background:var(--teal); flex-shrink:0;}
-
-  /* ---------- PROJECTS ---------- */
-  .deploy-card{
-    background:var(--panel); border:1px solid var(--line); border-radius:6px;
-    padding:26px; margin-bottom:20px; transition:border-color 0.2s;
-  }
-  .deploy-card:hover{border-color:#2e3f4f;}
-  .deploy-head{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:12px; flex-wrap:wrap;}
-  .deploy-name{font-family:var(--mono); font-weight:700; font-size:17px;}
-  .status{
-    display:flex; align-items:center; gap:7px; font-family:var(--mono); font-size:11px;
-    color:var(--teal); text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap;
-  }
-  .status .sdot{width:7px; height:7px; border-radius:50%; background:var(--teal); box-shadow:0 0 6px var(--teal);}
-  .deploy-desc{color:var(--muted); font-size:14.5px; margin-bottom:16px; max-width:680px;}
-  .deploy-tags{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px;}
-  .tag{font-family:var(--mono); font-size:11px; color:var(--violet); background:rgba(167,139,250,0.08); border:1px solid rgba(167,139,250,0.25); padding:3px 9px; border-radius:3px;}
-  .deploy-links{display:flex; gap:18px; font-family:var(--mono); font-size:12px;}
-  .deploy-links a{color:var(--muted); border-bottom:1px solid transparent;}
-  .deploy-links a:hover{color:var(--teal); border-color:var(--teal);}
-
-  .sandbox-title{font-family:var(--mono); font-size:12px; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.08em; margin:36px 0 16px;}
-  .sandbox-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
-  @media (max-width:760px){.sandbox-grid{grid-template-columns:1fr;}}
-  .sandbox-card{background:var(--panel-2); border:1px solid var(--line); border-radius:6px; padding:16px;}
-  .sandbox-card .sname{font-family:var(--mono); font-size:13px; font-weight:600; margin-bottom:6px;}
-  .sandbox-card .sdesc{font-size:13px; color:var(--muted); margin-bottom:10px;}
-  .sandbox-card .deploy-tags{margin-bottom:10px;}
-  .sandbox-card a{font-family:var(--mono); font-size:11.5px; color:var(--muted);}
-  .sandbox-card a:hover{color:var(--teal);}
-
-  /* ---------- LOGS / EXPERIENCE ---------- */
-  .log{display:grid; grid-template-columns:150px 1fr; gap:24px; padding:20px 0; border-top:1px solid var(--line);}
-  .log:first-child{border-top:none;}
-  @media (max-width:600px){.log{grid-template-columns:1fr; gap:8px;}}
-  .log-ts{font-family:var(--mono); font-size:12px; color:var(--teal); padding-top:2px;}
-  .log-body h3{font-size:16px; font-weight:600; margin-bottom:3px;}
-  .log-body .org{font-family:var(--mono); font-size:12px; color:var(--muted-2); margin-bottom:10px;}
-  .log-body p{color:var(--muted); font-size:14.5px;}
-
-  /* ---------- CREDENTIALS ---------- */
-  .cred-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
-  @media (max-width:760px){.cred-grid{grid-template-columns:1fr;}}
-  .cred-card{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:20px;}
-  .cred-card .ctype{font-family:var(--mono); font-size:10.5px; color:var(--amber); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;}
-  .cred-card h4{font-size:14.5px; font-weight:600; margin-bottom:5px; line-height:1.4;}
-  .cred-card .csub{font-size:12.5px; color:var(--muted-2);}
-
-  /* ---------- CONNECT ---------- */
-  #connect{border-bottom:none;}
-  .connect-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:8px;}
-  @media (max-width:600px){.connect-grid{grid-template-columns:1fr;}}
-  .endpoint{
-    display:flex; align-items:center; justify-content:space-between;
-    background:var(--panel); border:1px solid var(--line); border-radius:6px;
-    padding:16px 18px; transition:border-color 0.15s;
-  }
-  .endpoint:hover{border-color:var(--teal);}
-  .endpoint .ep-left{display:flex; flex-direction:column; gap:2px;}
-  .endpoint .ep-label{font-family:var(--mono); font-size:11px; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.05em;}
-  .endpoint .ep-val{font-size:14px; color:var(--text); font-weight:500;}
-  .endpoint .arrow{color:var(--teal); font-family:var(--mono);}
-
-  footer{padding:32px 0 60px; text-align:center;}
-  footer p{font-family:var(--mono); font-size:11.5px; color:var(--muted-2);}
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.001s !important; animation-iteration-count:1 !important; transition-duration:0.001s !important;}
-  }
+  footer{padding:40px 0 60px; text-align:center;}
+  footer .badges{margin-bottom:16px;}
+  footer p{color:var(--muted); font-size:13px;}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <div class="logo"><span class="dot"></span>om@dubey:~$</div>
-    <button class="navtoggle" id="navtoggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <div class="nav-name">Om Anand Dubey</div>
+    <button class="navtoggle" id="navtoggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
     <div class="navlinks" id="navlinks">
-      <a href="#about"><span class="idx">01</span>overview</a>
-      <a href="#stack"><span class="idx">02</span>services</a>
-      <a href="#projects"><span class="idx">03</span>deployments</a>
-      <a href="#logs"><span class="idx">04</span>logs</a>
-      <a href="#credentials"><span class="idx">05</span>credentials</a>
-      <a href="#connect"><span class="idx">06</span>connect</a>
+      <a href="#about">About</a>
+      <a href="#stack">Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
 
+<div class="banner">
+  <h1>Om Anand Dubey</h1>
+  <div class="tagline">Backend Engineer · Go · Java / Spring Boot · Kafka · Kubernetes</div>
+  <div class="badges">
+    <a href="https://www.linkedin.com/in/om-anand-dubey-283366229/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+    <a href="https://leetcode.com/u/Om_Anand/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"></a>
+    <a href="https://www.geeksforgeeks.org/user/omanand2100/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/GeeksforGeeks-0F9D58?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks"></a>
+    <a href="https://github.com/Om20An00" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+    <a href="mailto:omanand2100@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+  </div>
+</div>
+
 <div class="wrap">
-
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="term">
-      <div class="term-bar">
-        <span class="c1"></span><span class="c2"></span><span class="c3"></span>
-        <span class="term-title">status — om-anand-dubey.systems</span>
-      </div>
-      <div class="term-body" id="termBody"></div>
-    </div>
-
-    <h1 class="hero-name">Om Anand Dubey</h1>
-    <div class="hero-role">Backend Engineer — Go · Java / Spring Boot · Kafka · Kubernetes</div>
-    <p class="hero-desc">I build backend systems that stay observable under load — event pipelines that don't drop messages, and services that hold their shape when traffic doesn't. Ex-TCS. Currently shipping side projects and interviewing for SDE / AI Engineer roles.</p>
-
-    <div class="metrics">
-      <div class="metric"><div class="num accent">0.1%</div><div class="lbl">LeetCode Global</div></div>
-      <div class="metric"><div class="num">1500+</div><div class="lbl">Problems Solved</div></div>
-      <div class="metric"><div class="num">2500+</div><div class="lbl">Total DSA (all platforms)</div></div>
-      <div class="metric"><div class="num accent">Open</div><div class="lbl">To Opportunities</div></div>
-    </div>
-
-    <div class="hero-cta">
-      <a class="btn primary" href="#projects">View deployments →</a>
-      <a class="btn ghost" href="mailto:omanand2100@gmail.com">Contact</a>
-      <a class="btn ghost" href="https://github.com/Om20An00" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </section>
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="eyebrow">01 · Overview</div>
-    <h2 class="title">Backend engineer, Ex-TCS, open to product companies</h2>
-    <div class="about-grid">
-      <div>
-        <p>Om resigned from a training role at <strong>Tata Consultancy Services</strong> after building and shipping a Spring Boot backend with JWT-based access control across three user roles, and a suite of RESTful APIs for booking and auth — covered by JUnit 5 and Mockito tests.</p>
-        <p>Before that, he led the AI/ML team at his university's <strong>Google Developer Student Club</strong>, mentoring peers on model deployment and hackathon prep, and built a mental-health analytics model during an AI/ML internship with IBM SkillsBuild that hit <strong>98.5% accuracy</strong> across data from 150+ countries.</p>
-        <p>Outside of work, competitive programming is core to how he thinks about engineering — a <strong>top 0.1% global LeetCode ranking</strong> earned across 1500+ problems, and the instinct for correctness and edge cases that comes with it.</p>
-      </div>
-      <div class="sidecard">
-        <div class="row"><span class="k">Location</span><span class="v">India</span></div>
-        <div class="row"><span class="k">Focus</span><span class="v">Backend · AI/RAG Systems</span></div>
-        <div class="row"><span class="k">Core stack</span><span class="v">Go, Java, Python</span></div>
-        <div class="row"><span class="k">Infra</span><span class="v">Kubernetes, Docker</span></div>
-        <div class="row"><span class="k">Status</span><span class="v" style="color:var(--teal)">Open to roles</span></div>
-        <div class="row"><span class="k">Education</span><span class="v">B.Tech CSE</span></div>
-      </div>
-    </div>
+    <h2><span class="hash">#</span>About Me</h2>
+    <p>Backend engineer with production experience building services in Go, Java/Spring Boot, and Python. Recently completed a training role at <strong>Tata Consultancy Services</strong>, where I built a Spring Boot backend with JWT-based role access control and a set of RESTful APIs for auth and booking, covered by JUnit 5 and Mockito tests.</p>
+    <p>I care about systems that stay observable under load — event pipelines that don't silently drop messages, and APIs that hold their shape when traffic doesn't. Outside of work, I've solved 1500+ problems on LeetCode and mentored peers on AI/ML projects as team lead at my university's Google Developer Student Club.</p>
+    <p>Currently open to <strong>SDE</strong> and <strong>AI Engineer</strong> roles at product companies.</p>
+
+    <pre><span class="cm">// what I bring</span>
+<span class="kw">type</span> <span class="tp">Engineer</span> <span class="kw">struct</span> {
+    Name     <span class="tp">string</span>  <span class="cm">// "Om Anand Dubey"</span>
+    Role     <span class="tp">string</span>  <span class="cm">// "Backend Engineer, Ex-TCS"</span>
+    Stack    []<span class="tp">string</span> <span class="cm">// Go, Java, Spring Boot, Kafka, Kubernetes</span>
+    OpenTo   <span class="tp">string</span>  <span class="cm">// "SDE / AI Engineer @ Product Companies"</span>
+}</pre>
+  </section>
+
+  <!-- COMPETITIVE PROGRAMMING -->
+  <section id="cp">
+    <h2><span class="hash">#</span>Competitive Programming</h2>
+    <table>
+      <tr><th>Platform</th><th>Achievement</th></tr>
+      <tr><td>LeetCode</td><td>1500+ problems solved</td></tr>
+      <tr><td>GeeksforGeeks</td><td>Top campus performer — 1000+ problems solved</td></tr>
+      <tr><td>Total</td><td>2500+ DSA problems across all platforms</td></tr>
+    </table>
   </section>
 
   <!-- STACK -->
   <section id="stack">
-    <div class="eyebrow">02 · Services running</div>
-    <h2 class="title">Stack</h2>
-    <p class="lead" style="margin-bottom:36px;">Everything below has shipped in at least one project on this page — nothing here is untested.</p>
+    <h2><span class="hash">#</span>Tech Stack</h2>
 
-    <div class="stack-cat">
+    <div class="stack-block">
       <h3>Languages</h3>
-      <div class="pills">
-        <div class="pill"><span class="pdot"></span>Java</div>
-        <div class="pill"><span class="pdot"></span>Go</div>
-        <div class="pill"><span class="pdot"></span>Python</div>
-        <div class="pill"><span class="pdot"></span>C++</div>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
+        <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++">
       </div>
     </div>
 
-    <div class="stack-cat">
+    <div class="stack-block">
       <h3>Backend &amp; Frameworks</h3>
-      <div class="pills">
-        <div class="pill"><span class="pdot"></span>Spring Boot</div>
-        <div class="pill"><span class="pdot"></span>Apache Kafka</div>
-        <div class="pill"><span class="pdot"></span>FastAPI</div>
-        <div class="pill"><span class="pdot"></span>REST APIs</div>
-        <div class="pill"><span class="pdot"></span>JUnit 5 / Mockito</div>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot">
+        <img src="https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" alt="Kafka">
+        <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
+        <img src="https://img.shields.io/badge/REST_API-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="REST API">
+        <img src="https://img.shields.io/badge/JUnit5-25A162?style=for-the-badge&logo=junit5&logoColor=white" alt="JUnit5">
       </div>
     </div>
 
-    <div class="stack-cat">
-      <h3>Infrastructure &amp; Observability</h3>
-      <div class="pills">
-        <div class="pill"><span class="pdot"></span>Kubernetes</div>
-        <div class="pill"><span class="pdot"></span>Docker</div>
-        <div class="pill"><span class="pdot"></span>GitHub Actions</div>
-        <div class="pill"><span class="pdot"></span>Prometheus</div>
-        <div class="pill"><span class="pdot"></span>Grafana</div>
-        <div class="pill"><span class="pdot"></span>AWS</div>
-        <div class="pill"><span class="pdot"></span>Linux</div>
+    <div class="stack-block">
+      <h3>Infrastructure &amp; DevOps</h3>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes">
+        <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+        <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions">
+        <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" alt="Prometheus">
+        <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" alt="Grafana">
+        <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS">
+        <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
       </div>
     </div>
 
-    <div class="stack-cat">
-      <h3>Data</h3>
-      <div class="pills">
-        <div class="pill"><span class="pdot"></span>PostgreSQL</div>
-        <div class="pill"><span class="pdot"></span>MySQL</div>
-        <div class="pill"><span class="pdot"></span>Redis</div>
+    <div class="stack-block">
+      <h3>Databases</h3>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+        <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+        <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis">
       </div>
     </div>
 
-    <div class="stack-cat">
+    <div class="stack-block">
       <h3>AI / LLM</h3>
-      <div class="pills">
-        <div class="pill"><span class="pdot"></span>LangChain</div>
-        <div class="pill"><span class="pdot"></span>OpenAI API</div>
-        <div class="pill"><span class="pdot"></span>pgvector</div>
-        <div class="pill"><span class="pdot"></span>Voyage AI Embeddings</div>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/OpenAI_API-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI">
+        <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain">
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="eyebrow">03 · Deployments</div>
-    <h2 class="title">Projects</h2>
-    <p class="lead" style="margin-bottom:32px;">Three systems built end-to-end — designed, containerized, and instrumented, not just coded.</p>
+    <h2><span class="hash">#</span>Featured Projects</h2>
 
-    <div class="deploy-card">
-      <div class="deploy-head">
-        <div class="deploy-name">event-driven-notification-system</div>
-        <div class="status"><span class="sdot"></span>healthy</div>
+    <div class="project">
+      <h3><a href="https://github.com/Om20An00/event-driven-notification-system.git" target="_blank" rel="noopener">📩 Event-Driven Notification System</a></h3>
+      <p>Asynchronous notification service built with Spring Boot and Apache Kafka. Idempotent producers prevent duplicate sends on retry, and a dead-letter-queue-backed retry path keeps a failing consumer from taking down the pipeline. Fully instrumented with a Prometheus + Grafana observability stack, containerized and Kubernetes-ready.</p>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java">
+        <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot">
+        <img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" alt="Kafka">
+        <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes">
+        <img src="https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white" alt="Prometheus">
+        <img src="https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white" alt="Grafana">
       </div>
-      <p class="deploy-desc">An asynchronous notification service built around Kafka producers and consumers, designed to survive the failure modes that actually happen in production: idempotent producers so retries don't cause duplicate sends, and a dead-letter-queue-backed retry path so a failing consumer doesn't take down the pipeline. Fully instrumented with a Prometheus + Grafana observability stack and packaged for Kubernetes deployment.</p>
-      <div class="deploy-tags">
-        <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Kafka</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Prometheus</span><span class="tag">Grafana</span>
-      </div>
-      <div class="deploy-links">
-        <a href="https://github.com/Om20An00/event-driven-notification-system.git" target="_blank" rel="noopener">↳ source</a>
-      </div>
+      <div class="links"><a href="https://github.com/Om20An00/event-driven-notification-system.git" target="_blank" rel="noopener">Source →</a></div>
     </div>
 
-    <div class="deploy-card">
-      <div class="deploy-head">
-        <div class="deploy-name">go-url-shortener</div>
-        <div class="status"><span class="sdot"></span>healthy</div>
+    <div class="project">
+      <h3><a href="https://github.com/Om20An00/go-url-shortener" target="_blank" rel="noopener">🔗 Distributed URL Shortener</a></h3>
+      <p>URL shortener written in Go, with Redis in front for low-latency lookups and PostgreSQL underneath for durable storage. Deployed across multiple replicas on Kubernetes with a full CI/CD pipeline through GitHub Actions, and the same Prometheus/Grafana observability approach carried over from the notification system.</p>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go">
+        <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL">
+        <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis">
+        <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
+        <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes">
+        <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions">
       </div>
-      <p class="deploy-desc">A distributed URL shortener built in Go, with Redis in front for low-latency lookups and PostgreSQL underneath for durable persistence. Deployed across multiple replicas on Kubernetes with a full CI/CD pipeline through GitHub Actions, and the same Prometheus/Grafana observability approach carried over from the notification system — because a shortener that silently drops redirects is worse than one that's slow.</p>
-      <div class="deploy-tags">
-        <span class="tag">Go</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GitHub Actions</span>
-      </div>
-      <div class="deploy-links">
-        <a href="https://github.com/Om20An00/go-url-shortener" target="_blank" rel="noopener">↳ source</a>
-      </div>
+      <div class="links"><a href="https://github.com/Om20An00/go-url-shortener" target="_blank" rel="noopener">Source →</a></div>
     </div>
 
-    <div class="deploy-card">
-      <div class="deploy-head">
-        <div class="deploy-name">eka — enterprise knowledge assistant</div>
-        <div class="status"><span class="sdot"></span>healthy</div>
+    <div class="project">
+      <h3><a href="https://github.com/Om20An00" target="_blank" rel="noopener">🧠 Enterprise Knowledge Assistant (EKA)</a></h3>
+      <p>Retrieval-augmented generation platform for natural-language querying across organizational documents. FastAPI and LangChain handle orchestration, pgvector handles semantic retrieval, and responses are generated with GPT-4o-mini. Multi-user access is JWT-secured so different teams can query the same knowledge base without seeing each other's documents.</p>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+        <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI">
+        <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangChain">
+        <img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI">
+        <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL">
       </div>
-      <p class="deploy-desc">A retrieval-augmented generation platform that lets teams ask natural-language questions across their own internal documents instead of searching for them. FastAPI and LangChain handle orchestration, pgvector handles semantic retrieval, and responses are generated with GPT-4o-mini. Multi-user access is JWT-secured, so different teams can query the same knowledge base without seeing each other's documents.</p>
-      <div class="deploy-tags">
-        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LangChain</span><span class="tag">OpenAI</span><span class="tag">PostgreSQL</span><span class="tag">pgvector</span>
-      </div>
-      <div class="deploy-links">
-        <a href="https://github.com/Om20An00" target="_blank" rel="noopener">↳ source</a>
-      </div>
+      <div class="links"><a href="https://github.com/Om20An00" target="_blank" rel="noopener">Source →</a></div>
     </div>
 
-    <div class="sandbox-title">Sandbox deployments</div>
-    <div class="sandbox-grid">
-      <div class="sandbox-card">
-        <div class="sname">Green Cart</div>
-        <div class="sdesc">Full-stack grocery delivery platform with Stripe payments, containerized and deployed to production.</div>
-        <div class="deploy-tags"><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">MongoDB</span></div>
-        <a href="https://greencart-deploy-8rrm.vercel.app/" target="_blank" rel="noopener">↳ live</a> &nbsp;
-        <a href="https://github.com/Om20An00/greencart-deploy-public" target="_blank" rel="noopener">source</a>
-      </div>
-      <div class="sandbox-card">
-        <div class="sname">Quick AI SaaS</div>
-        <div class="sdesc">Full-stack PERN app for AI content generation, integrating Gemini, ClipDrop, Cloudinary, and Clerk Auth.</div>
-        <div class="deploy-tags"><span class="tag">PostgreSQL</span><span class="tag">Express</span><span class="tag">React</span></div>
-        <a href="https://quick-ai-full-stack-liart.vercel.app/" target="_blank" rel="noopener">↳ live</a> &nbsp;
-        <a href="https://github.com/Om20An00/Quick-AI-Public" target="_blank" rel="noopener">source</a>
-      </div>
-      <div class="sandbox-card">
-        <div class="sname">LLaMA 3.1 AI Chatbot</div>
-        <div class="sdesc">Chatbot powered by the Groq API and LLaMA 3.1, with session persistence and real-time replies.</div>
-        <div class="deploy-tags"><span class="tag">Python</span><span class="tag">Groq API</span></div>
-        <a href="https://github.com/Om20An00/Llama-3.1-AI-Chatbot" target="_blank" rel="noopener">↳ source</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOGS -->
-  <section id="logs">
-    <div class="eyebrow">04 · Logs</div>
-    <h2 class="title">Experience</h2>
-    <div class="logs-list">
-      <div class="log">
-        <div class="log-ts">2026.03 — 2026.06</div>
-        <div class="log-body">
-          <h3>Assistant System Engineer Trainee</h3>
-          <div class="org">Tata Consultancy Services</div>
-          <p>Built a Spring Boot backend with MySQL and JWT-based role access control across three user roles, plus 5+ RESTful APIs for auth and booking, backed by JUnit 5 and Mockito test coverage.</p>
+    <h2 style="margin-top:36px;"><span class="hash">#</span>Other Projects</h2>
+    <div class="other-grid">
+      <div class="other-card">
+        <h4>🛒 Green Cart</h4>
+        <p>Full-stack grocery delivery platform with Stripe payments, containerized and deployed to production.</p>
+        <div class="badges">
+          <img src="https://img.shields.io/badge/React-181717?style=flat-square&logo=react&logoColor=61DAFB" alt="React">
+          <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB">
         </div>
+        <a href="https://greencart-deploy-8rrm.vercel.app/" target="_blank" rel="noopener">Live</a> · <a href="https://github.com/Om20An00/greencart-deploy-public" target="_blank" rel="noopener">Source</a>
       </div>
-      <div class="log">
-        <div class="log-ts">2024.05 — 2024.07</div>
-        <div class="log-body">
-          <h3>AI/ML Intern</h3>
-          <div class="org">IBM SkillsBuild × AICTE</div>
-          <p>Built a mental health fitness tracker analyzing data across 150+ countries using six-plus regression models, reaching 98.5% accuracy with Python and Scikit-Learn.</p>
+      <div class="other-card">
+        <h4>🤖 Quick AI SaaS</h4>
+        <p>Full-stack PERN app for AI content generation, integrating Gemini, ClipDrop, Cloudinary, and Clerk Auth.</p>
+        <div class="badges">
+          <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL">
+          <img src="https://img.shields.io/badge/Express-181717?style=flat-square&logo=express&logoColor=white" alt="Express">
         </div>
+        <a href="https://quick-ai-full-stack-liart.vercel.app/" target="_blank" rel="noopener">Live</a> · <a href="https://github.com/Om20An00/Quick-AI-Public" target="_blank" rel="noopener">Source</a>
       </div>
-      <div class="log">
-        <div class="log-ts">Ongoing</div>
-        <div class="log-body">
-          <h3>Lead, AI/ML Team</h3>
-          <div class="org">Google Developer Student Club — GGV</div>
-          <p>Mentored peers on AI/ML projects, model deployment, and hackathon preparation.</p>
+      <div class="other-card">
+        <h4>💬 LLaMA 3.1 Chatbot</h4>
+        <p>Chatbot powered by the Groq API and LLaMA 3.1, with session persistence and real-time replies.</p>
+        <div class="badges">
+          <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+          <img src="https://img.shields.io/badge/Groq-F55036?style=flat-square&logo=groq&logoColor=white" alt="Groq">
         </div>
+        <a href="https://github.com/Om20An00/Llama-3.1-AI-Chatbot" target="_blank" rel="noopener">Source</a>
       </div>
     </div>
   </section>
 
-  <!-- CREDENTIALS -->
-  <section id="credentials">
-    <div class="eyebrow">05 · Credentials</div>
-    <h2 class="title">Education &amp; Certifications</h2>
-    <div class="cred-grid">
-      <div class="cred-card">
-        <div class="ctype">Education</div>
-        <h4>B.Tech — Computer Science &amp; Engineering</h4>
-        <div class="csub">Guru Ghasidas Vishwavidyalaya</div>
-      </div>
-      <div class="cred-card">
-        <div class="ctype">Certification</div>
-        <h4>Oracle Cloud Infrastructure 2025 — Generative AI Professional</h4>
-        <div class="csub">Oracle</div>
-      </div>
-      <div class="cred-card">
-        <div class="ctype">Certification</div>
-        <h4>Oracle Cloud Infrastructure 2025 — AI Foundations Associate</h4>
-        <div class="csub">Oracle</div>
-      </div>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2><span class="hash">#</span>Experience</h2>
+    <div class="exp">
+      <div class="role">Assistant System Engineer Trainee</div>
+      <div class="meta">Tata Consultancy Services · Mar 2026 – Jun 2026</div>
+      <p>Built a Spring Boot backend with MySQL and JWT-based role access control across three user roles, plus 5+ RESTful APIs for auth and booking, backed by JUnit 5 and Mockito test coverage.</p>
+    </div>
+    <div class="exp">
+      <div class="role">AI/ML Intern</div>
+      <div class="meta">IBM SkillsBuild × AICTE · May 2024 – Jul 2024</div>
+      <p>Built a mental health fitness tracker analyzing data across 150+ countries using six-plus regression models, reaching 98.5% accuracy with Python and Scikit-Learn.</p>
+    </div>
+    <div class="exp">
+      <div class="role">Lead, AI/ML Team</div>
+      <div class="meta">Google Developer Student Club — GGV</div>
+      <p>Mentored peers on AI/ML projects, model deployment, and hackathon preparation.</p>
     </div>
   </section>
 
-  <!-- CONNECT -->
-  <section id="connect">
-    <div class="eyebrow">06 · Connect</div>
-    <h2 class="title">Reach out</h2>
-    <p class="lead" style="margin-bottom:24px;">Open to SDE and AI Engineer roles at product companies. Fastest way to reach me is email.</p>
-    <div class="connect-grid">
-      <a class="endpoint" href="mailto:omanand2100@gmail.com">
-        <div class="ep-left"><span class="ep-label">Email</span><span class="ep-val">omanand2100@gmail.com</span></div>
-        <span class="arrow">→</span>
-      </a>
-      <a class="endpoint" href="https://www.linkedin.com/in/om-anand-dubey-283366229/" target="_blank" rel="noopener">
-        <div class="ep-left"><span class="ep-label">LinkedIn</span><span class="ep-val">om-anand-dubey</span></div>
-        <span class="arrow">→</span>
-      </a>
-      <a class="endpoint" href="https://github.com/Om20An00" target="_blank" rel="noopener">
-        <div class="ep-left"><span class="ep-label">GitHub</span><span class="ep-val">Om20An00</span></div>
-        <span class="arrow">→</span>
-      </a>
-      <a class="endpoint" href="https://leetcode.com/u/Om_Anand/" target="_blank" rel="noopener">
-        <div class="ep-left"><span class="ep-label">LeetCode</span><span class="ep-val">Om_Anand — Top 0.1%</span></div>
-        <span class="arrow">→</span>
-      </a>
-      <a class="endpoint" href="https://www.geeksforgeeks.org/user/omanand2100/" target="_blank" rel="noopener">
-        <div class="ep-left"><span class="ep-label">GeeksforGeeks</span><span class="ep-val">omanand2100</span></div>
-        <span class="arrow">→</span>
-      </a>
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2><span class="hash">#</span>Education &amp; Certifications</h2>
+    <ul class="clean">
+      <li>B.Tech — Computer Science &amp; Engineering <span class="sub">Guru Ghasidas Vishwavidyalaya</span></li>
+      <li>Oracle Cloud Infrastructure 2025 — Generative AI Professional <span class="sub">Oracle</span></li>
+      <li>Oracle Cloud Infrastructure 2025 — AI Foundations Associate <span class="sub">Oracle</span></li>
+    </ul>
+  </section>
+
+  <!-- GITHUB STATS -->
+  <section id="stats">
+    <h2><span class="hash">#</span>GitHub Stats</h2>
+    <div class="gh-stats">
+      <img src="https://github-readme-stats.vercel.app/api?username=Om20An00&show_icons=true&count_private=true&theme=tokyonight&hide_border=true&include_all_commits=true&bg_color=0d1117&title_color=a78bfa&icon_color=a78bfa&text_color=ffffff" height="165" alt="GitHub Stats">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Om20An00&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=a78bfa&text_color=ffffff&langs_count=8" height="165" alt="Top Languages">
     </div>
   </section>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Om Anand Dubey — built with HTML/CSS/JS, deployed on GitHub Pages.</p>
-  </footer>
+  <!-- CONTACT -->
+  <section id="contact" style="border-bottom:none; text-align:center;">
+    <h2 style="text-align:left;"><span class="hash">#</span>Contact</h2>
+    <p style="margin-bottom:22px;">Open to SDE and AI Engineer roles at product companies. Fastest way to reach me is email.</p>
+    <div class="badges">
+      <a href="mailto:omanand2100@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+      <a href="https://www.linkedin.com/in/om-anand-dubey-283366229/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+      <a href="https://github.com/Om20An00" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+      <a href="https://leetcode.com/u/Om_Anand/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"></a>
+      <a href="https://www.geeksforgeeks.org/user/omanand2100/" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/GeeksforGeeks-0F9D58?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks"></a>
+    </div>
+  </section>
 </div>
+
+<footer>
+  <p>&copy; <span id="year"></span> Om Anand Dubey</p>
+</footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // mobile nav toggle
   const navToggle = document.getElementById('navtoggle');
   const navLinks = document.getElementById('navlinks');
   navToggle.addEventListener('click', () => {
@@ -543,38 +409,6 @@
     navToggle.setAttribute('aria-expanded', isOpen);
   });
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-  // terminal boot sequence
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const lines = [
-    { text: 'booting profile.service ...', cls: '' },
-    { text: '<span class="ok">✓</span> stack loaded: go, java, python', cls: '' },
-    { text: '<span class="ok">✓</span> leetcode rank: top 0.1% global', cls: '' },
-    { text: '<span class="ok">✓</span> ex-tcs :: contract terminated cleanly', cls: '' },
-    { text: '<span class="warn">⚠</span> availability: OPEN_TO_WORK', cls: '' },
-    { text: 'listening for offers on :443 ...<span class="cursor"></span>', cls: '' },
-  ];
-  const termBody = document.getElementById('termBody');
-
-  function renderAll(){
-    termBody.innerHTML = lines.map(l => `<div class="ln" style="opacity:1">${l.text}</div>`).join('');
-  }
-
-  function typeSequence(i){
-    if(i >= lines.length) return;
-    const div = document.createElement('div');
-    div.className = 'ln';
-    div.style.animationDelay = '0s';
-    div.innerHTML = lines[i].text;
-    termBody.appendChild(div);
-    setTimeout(() => typeSequence(i+1), 420);
-  }
-
-  if(reduceMotion){
-    renderAll();
-  } else {
-    typeSequence(0);
-  }
 </script>
 
 </body>
