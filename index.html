@@ -1,271 +1,438 @@
-<div align="center">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Om Anand Dubey — Backend Engineer building scalable, event-driven and AI-powered systems." />
+  <meta name="theme-color" content="#080b14" />
+  <title>Om Anand Dubey | Backend Engineer</title>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=210&section=header&text=Om%20Anand%20Dubey&fontSize=50&fontColor=ffffff&fontAlignY=36&desc=Backend%20Engineer%20%7C%20Go%20%C2%B7%20Java%20%C2%B7%20Kafka%20%C2%B7%20Kubernetes%20%C2%B7%20AI%2FML&descAlignY=56&descColor=a78bfa&animation=fadeIn" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=A78BFA&center=true&vCenter=true&width=700&lines=Backend+Engineer+%7C+Go+%C2%B7+Java+%C2%B7+Spring+Boot;Event-Driven+Systems+%7C+Kafka+%C2%B7+Docker+%C2%B7+Kubernetes;AI%2FML+Engineer+%7C+FastAPI+%C2%B7+XGBoost+%C2%B7+LangChain;LeetCode+Top+0.1%25+%E2%80%94+1500%2B+Problems+Solved;Ex-TCS+%7C+Open+to+SDE+%2F+AI+Engineer+Roles" alt="Typing SVG" />
-</a>
+  <style>
+    :root {
+      --bg: #080b14;
+      --bg-soft: #0d1220;
+      --card: rgba(17, 23, 39, .72);
+      --card-solid: #111727;
+      --line: rgba(255,255,255,.09);
+      --text: #f5f7ff;
+      --muted: #9aa5bd;
+      --purple: #9b7cff;
+      --cyan: #58d8ff;
+      --green: #5ee6a8;
+      --shadow: 0 24px 80px rgba(0,0,0,.32);
+      --radius: 22px;
+      --max: 1160px;
+    }
 
-<br/>
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(155,124,255,.14), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(88,216,255,.10), transparent 26%),
+        var(--bg);
+      font-family: Inter, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0; pointer-events: none; z-index: -1;
+      background-image: linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: auto; }
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/om-anand-dubey-283366229/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Om20An00)
-[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/u/Om_Anand/)
-[![GeeksforGeeks](https://img.shields.io/badge/GeeksforGeeks-0F9D58?style=for-the-badge&logo=geeksforgeeks&logoColor=white)](https://www.geeksforgeeks.org/user/omanand2100/)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:omanand2100@gmail.com)
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(8,11,20,.72);
+      border-bottom: 1px solid transparent;
+      transition: .25s ease;
+    }
+    nav.scrolled { border-color: var(--line); }
+    .nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font: 600 15px "JetBrains Mono", monospace; letter-spacing: -.3px; }
+    .brand span { color: var(--purple); }
+    .nav-links { display: flex; gap: 26px; color: var(--muted); font-size: 13px; font-weight: 600; }
+    .nav-links a:hover { color: white; }
+    .nav-cta {
+      padding: 9px 15px; border: 1px solid rgba(155,124,255,.45);
+      border-radius: 999px; color: #ddd5ff; background: rgba(155,124,255,.08);
+    }
 
-<img src="https://komarev.com/ghpvc/?username=Om20An00&label=Profile+Views&color=7c3aed&style=flat" alt="profile views" />
+    .hero { min-height: 100vh; display: grid; place-items: center; padding: 130px 0 70px; }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 60px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; padding: 7px 12px;
+      border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.035);
+      color: #c9d1e4; font: 500 12px "JetBrains Mono", monospace;
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 16px var(--green); }
+    h1 {
+      font-size: clamp(48px, 7vw, 82px); line-height: .98; letter-spacing: -4px;
+      margin: 25px 0 22px; max-width: 820px;
+    }
+    h1 .gradient {
+      background: linear-gradient(100deg, #fff 10%, #bcaeff 48%, #71ddff 95%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-copy { max-width: 700px; color: var(--muted); font-size: 18px; }
+    .hero-copy strong { color: #e9edfa; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px; padding: 12px 17px;
+      border-radius: 12px; border: 1px solid var(--line); font-weight: 700; font-size: 13px;
+      transition: transform .2s, border-color .2s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(155,124,255,.5); }
+    .btn-primary { background: linear-gradient(135deg, #9b7cff, #6c57d8); border: 0; box-shadow: 0 12px 35px rgba(115,88,220,.22); }
+    .btn-secondary { background: rgba(255,255,255,.035); }
 
-<br/><br/>
+    .terminal {
+      position: relative; border: 1px solid var(--line); border-radius: 20px;
+      background: rgba(10,14,25,.86); box-shadow: var(--shadow); overflow: hidden;
+      transform: rotate(1.2deg);
+    }
+    .terminal-top { height: 38px; display: flex; align-items: center; gap: 7px; padding: 0 14px; border-bottom: 1px solid var(--line); }
+    .terminal-top i { width: 9px; height: 9px; border-radius: 50%; background: #394258; }
+    .terminal-title { margin-left: 6px; color: #65718a; font: 11px "JetBrains Mono", monospace; }
+    pre { margin: 0; padding: 23px; overflow: auto; color: #cbd4e8; font: 12px/1.8 "JetBrains Mono", monospace; }
+    .k { color: #c59bff; } .s { color: #82e8c0; } .c { color: #65718a; } .v { color: #72d9ff; }
 
-**⚡ Quick Links:**
-[About](#-about-me) ·
-[Stack](#️-tech-stack) ·
-[Projects](#-featured-projects) ·
-[Experience](#-experience) ·
-[Stats](#-github-stats) ·
-[Activity](#-activity--commits-issues--pull-requests)
+    section { padding: 100px 0; }
+    .section-head { margin-bottom: 35px; }
+    .kicker { color: var(--purple); font: 600 12px "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: 1.5px; }
+    h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.05; letter-spacing: -2px; margin: 10px 0; }
+    .section-sub { color: var(--muted); max-width: 670px; }
 
-</div>
+    .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+    .stat, .card {
+      border: 1px solid var(--line); background: var(--card); backdrop-filter: blur(15px);
+      border-radius: var(--radius); box-shadow: 0 12px 45px rgba(0,0,0,.13);
+    }
+    .stat { padding: 24px; }
+    .stat-number { font-size: 29px; font-weight: 800; letter-spacing: -1px; }
+    .stat-label { color: var(--muted); font-size: 12px; margin-top: 3px; }
 
----
+    .projects { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    .project { padding: 27px; display: flex; flex-direction: column; min-height: 290px; transition: .25s; }
+    .project:hover { transform: translateY(-5px); border-color: rgba(155,124,255,.35); }
+    .project-top { display: flex; justify-content: space-between; gap: 15px; }
+    .project-icon { font-size: 26px; }
+    .project h3 { margin: 16px 0 9px; font-size: 20px; }
+    .project p { color: var(--muted); font-size: 13px; margin: 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; padding-top: 22px; }
+    .tag {
+      font: 500 10px "JetBrains Mono", monospace; color: #bdc8de;
+      background: rgba(255,255,255,.045); border: 1px solid var(--line);
+      padding: 5px 8px; border-radius: 7px;
+    }
+    .project-link { color: #bbaeff; font-size: 12px; font-weight: 700; margin-top: 16px; }
 
-## ⚡ About Me
+    .stack { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .stack-card { padding: 22px; }
+    .stack-card h3 { margin: 0 0 14px; font-size: 14px; }
+    .stack-items { color: var(--muted); font: 11px/2 "JetBrains Mono", monospace; }
 
-```go
-package main
+    .timeline { position: relative; max-width: 850px; }
+    .timeline::before { content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 1px; background: var(--line); }
+    .role { position: relative; padding-left: 38px; margin-bottom: 42px; }
+    .role::before {
+      content: ""; position: absolute; left: 2px; top: 8px; width: 11px; height: 11px;
+      border-radius: 50%; background: var(--bg); border: 2px solid var(--purple);
+      box-shadow: 0 0 18px rgba(155,124,255,.4);
+    }
+    .role-date { color: var(--purple); font: 600 11px "JetBrains Mono", monospace; }
+    .role h3 { margin: 5px 0 4px; font-size: 19px; }
+    .role-company { color: #dce3f2; font-size: 13px; font-weight: 600; }
+    .role p { color: var(--muted); font-size: 13px; margin: 9px 0 0; }
 
-import "fmt"
+    .links-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }
+    .social {
+      padding: 17px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,255,255,.025);
+      transition: .2s;
+    }
+    .social:hover { transform: translateY(-3px); border-color: rgba(155,124,255,.4); background: rgba(155,124,255,.07); }
+    .social strong { display: block; font-size: 13px; }
+    .social span { display: block; color: var(--muted); font-size: 10px; margin-top: 3px; }
 
-type Engineer struct {
-	Name     string
-	Role     string
-	Location string
-	Stack    []string
-	LeetCode string
-	OpenTo   string
+    .contact {
+      text-align: center; padding: 60px 25px; border: 1px solid var(--line); border-radius: 28px;
+      background: radial-gradient(circle at 50% 0%, rgba(155,124,255,.14), transparent 55%), var(--card);
+    }
+    .contact h2 { max-width: 700px; margin: 10px auto 13px; }
+    .contact p { color: var(--muted); max-width: 620px; margin: auto; }
+    footer { border-top: 1px solid var(--line); padding: 28px 0 35px; color: #6f7a91; font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+    .mono { font-family: "JetBrains Mono", monospace; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 45px; }
+      .terminal { max-width: 700px; transform: none; }
+      .stats { grid-template-columns: repeat(2,1fr); }
+      .links-grid { grid-template-columns: repeat(3,1fr); }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .nav-links { display: none; }
+      h1 { letter-spacing: -2.5px; }
+      section { padding: 75px 0; }
+      .projects, .stack { grid-template-columns: 1fr; }
+      .links-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-inner { flex-direction: column; }
+    }
+    @media (max-width: 430px) {
+      .stats { grid-template-columns: 1fr 1fr; gap: 9px; }
+      .stat { padding: 17px; }
+      .stat-number { font-size: 23px; }
+      .links-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .reveal { opacity: 0; transform: translateY(18px); transition: .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+
+<body>
+  <nav id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">om<span>.</span>anand</a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact" class="nav-cta">Let's connect ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow"><span class="dot"></span> Open to SDE / AI Engineer opportunities</div>
+          <h1>Building <span class="gradient">systems</span> that scale, ship & stay observable.</h1>
+          <p class="hero-copy">
+            I'm <strong>Om Anand Dubey</strong>, a backend-focused engineer working across
+            <strong>Go, Java, Spring Boot, Kafka, Kubernetes</strong> and AI-powered applications.
+            I enjoy turning complex engineering problems into clean, reliable products.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#work">Explore my work ↓</a>
+            <a class="btn btn-secondary" href="mailto:omanand2100@gmail.com">Email me ↗</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/om-anand-dubey-283366229/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <div class="terminal reveal">
+          <div class="terminal-top">
+            <i></i><i></i><i></i>
+            <span class="terminal-title">engineer.go</span>
+          </div>
+          <pre><span class="k">type</span> Engineer <span class="k">struct</span> {
+  Name     <span class="v">string</span>
+  Focus    <span class="v">string</span>
+  Systems  []<span class="v">string</span>
+  DSA      <span class="v">string</span>
 }
 
-func main() {
-	me := Engineer{
-		Name:     "Om Anand Dubey",
-		Role:     "Backend Engineer | Ex-TCS",
-		Location: "India 🇮🇳",
-		Stack:    []string{"Go", "Java", "Spring Boot", "Kafka", "Kubernetes", "Docker", "PostgreSQL", "Redis", "FastAPI", "XGBoost"},
-		LeetCode: "Top 0.1% Globally — 1500+ Problems",
-		OpenTo:   "SDE / AI Engineer @ Product Companies",
-	}
-	fmt.Println("Building systems that hold up under load — and stay observable while they do it.")
-	_ = me
+me := Engineer{
+  Name:    <span class="s">"Om Anand Dubey"</span>,
+  Focus:   <span class="s">"Backend + AI"</span>,
+  Systems: []<span class="v">string</span>{
+    <span class="s">"Event-driven"</span>,
+    <span class="s">"Distributed"</span>,
+    <span class="s">"Cloud-native"</span>,
+  },
+  DSA: <span class="s">"2500+ problems"</span>,
 }
-```
 
-<div align="center">
-
-| 🎯 Focus | 📍 Based In | 🚀 Open To |
-|:---:|:---:|:---:|
-| Backend Systems + Applied ML | India 🇮🇳 | SDE / AI Engineer @ Product Companies |
-
-</div>
-
----
-
-## 🏆 Competitive Programming
-
-<div align="center">
-
-| Platform | Achievement | Link |
-|:---:|:---:|:---:|
-| 🟡 **LeetCode** | Top **0.1% Globally** — 1500+ Problems Solved | [Profile ↗](https://leetcode.com/u/Om_Anand/) |
-| 🟢 **GeeksforGeeks** | Top Campus Performer — 1000+ Problems Solved | [Profile ↗](https://www.geeksforgeeks.org/user/omanand2100/) |
-| 📊 **Total** | **2500+ DSA Problems** across all platforms | — |
-
-</div>
-
----
-
-## 🛠️ Tech Stack
-
-<div align="center">
-
-**Languages**
-
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-
-**Backend & Frameworks**
-
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
-![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![REST API](https://img.shields.io/badge/REST_API-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![JUnit5](https://img.shields.io/badge/JUnit5-25A162?style=for-the-badge&logo=junit5&logoColor=white)
-
-**Data & ML**
-
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![scikit--learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-006ACC?style=for-the-badge)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-
-**Infrastructure & DevOps**
-
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-
-**Databases**
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-
-**AI / LLM**
-
-![OpenAI](https://img.shields.io/badge/OpenAI_API-412991?style=for-the-badge&logo=openai&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
-
-</div>
-
----
-
-## 🚀 Featured Projects
-
-<div align="center">
-
-### 📊 [AI Business Intelligence Platform](https://github.com/Om20An00/AI-Buisness-Intelligence-Platform.git)
-[![Live Demo](https://img.shields.io/badge/🔴_Live_Demo-insightpilot--frontend.onrender.com-2EA3F7?style=flat-square)](https://insightpilot-frontend.onrender.com/)
-[![Repo](https://img.shields.io/badge/Source-GitHub-181717?style=flat-square&logo=github)](https://github.com/Om20An00/AI-Buisness-Intelligence-Platform)
-
-> AI decision intelligence platform that turns natural-language business questions into SQL analytics, ML churn predictions, and demand forecasts. Built with **FastAPI** and two trained **XGBoost** models (0.95 AUC churn classifier, walk-forward demand forecaster), a **Streamlit** dashboard, and a rule-based recommendation engine — deployed via Docker on Render with a Neon Postgres backend.
-
-`Python` `FastAPI` `XGBoost` `PostgreSQL` `Streamlit` `Docker`
-
----
-
-### 📩 [Event-Driven Notification System](https://github.com/Om20An00/event-driven-notification-system.git)
-[![Live Demo](https://img.shields.io/badge/🔴_Live_Demo-AWS_EC2-FF9900?style=flat-square&logo=amazonaws&logoColor=white)](http://13.50.242.12:8082/)
-[![Repo](https://img.shields.io/badge/Source-GitHub-181717?style=flat-square&logo=github)](https://github.com/Om20An00/event-driven-notification-system)
-
-> Asynchronous notification system built with **Spring Boot** and **Apache Kafka**, with idempotent producers, DLQ-backed retry handling, and a full **Prometheus + Grafana** observability stack — containerized and Kubernetes-ready.
-
-`Java` `Spring Boot` `Kafka` `Docker` `Kubernetes` `Prometheus` `Grafana`
-
----
-
-### 🔗 [Distributed URL Shortener](https://github.com/Om20An00/go-url-shortener)
-[![Repo](https://img.shields.io/badge/Source-GitHub-181717?style=flat-square&logo=github)](https://github.com/Om20An00/go-url-shortener)
-
-> Distributed URL shortener in **Go** with **Redis caching**, **PostgreSQL** persistence, multi-replica **Kubernetes** deployment, and full **CI/CD via GitHub Actions**. Production-grade observability built in with Prometheus and Grafana.
-
-`Go` `PostgreSQL` `Redis` `Docker` `Kubernetes` `Prometheus` `GitHub Actions`
-
----
-
-### 🧠 Enterprise Knowledge Assistant (EKA)
-[![Repo](https://img.shields.io/badge/Source-GitHub-181717?style=flat-square&logo=github)](https://github.com/Om20An00)
-
-> Enterprise-grade **RAG platform** for natural language querying across organizational documents — built with **FastAPI**, **LangChain**, and **pgvector** for semantic retrieval, powered by **GPT-4o-mini** with JWT-secured multi-user access.
-
-`Python` `FastAPI` `LangChain` `OpenAI` `PostgreSQL` `pgvector`
-
-</div>
-
----
-
-## 🧩 Other Projects
-
-<div align="center">
-
-### 🛒 [Green Cart](https://github.com/Om20An00/greencart-deploy-public)
-[![Live Demo](https://img.shields.io/badge/🔴_Live_Demo-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://greencart-deploy-8rrm.vercel.app/)
-
-> Full-stack grocery delivery platform containerized with **Docker**, with **Stripe** payment integration, deployed to production.
-
-`Node.js` `React` `MongoDB` `Docker` `Stripe`
-
----
-
-### 🤖 [Quick AI SaaS](https://github.com/Om20An00/Quick-AI-Public)
-[![Live Demo](https://img.shields.io/badge/🔴_Live_Demo-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://quick-ai-full-stack-liart.vercel.app/)
-
-> Full-stack PERN app integrating **Gemini API**, **ClipDrop**, **Cloudinary**, and **Clerk Auth** for AI content generation.
-
-`PostgreSQL` `Express` `React` `Node.js` `Gemini API`
-
----
-
-### 💬 [LLaMA 3.1 AI Chatbot](https://github.com/Om20An00/Llama-3.1-AI-Chatbot)
-
-> Smart chatbot powered by **Groq API** and **LLaMA 3.1** with session persistence and real-time replies.
-
-`Python` `Groq API` `LLaMA 3.1`
-
-</div>
-
----
-
-## 💼 Experience
-
-**Assistant System Engineer Trainee — Tata Consultancy Services** *(March 2026 – June 2026)*
-> Built a Spring Boot backend with MySQL and JWT-based RBAC across 3 user roles, along with 5+ RESTful APIs for auth and booking management, backed by JUnit 5 and Mockito test coverage.
-
-**AI/ML Intern — IBM SkillsBuild × AICTE** *(May–July 2024)*
-> Built a Mental Health Fitness Tracker analyzing data across 150+ countries using 6+ regression models. Achieved **98.5% accuracy** with Python and Scikit-Learn.
-
-**Lead, AI/ML Team — Google Developer Student Club (GDSC-GGV)**
-> Mentored peers on AI/ML projects, model deployment, and hackathon preparation.
-
----
-
-## 🎓 Education & Certifications
-
-🎓 **B.Tech — Computer Science & Engineering** | Guru Ghasidas Vishwavidyalaya
-
-✅ Oracle Cloud Infrastructure 2025 — **Generative AI Professional**
-✅ Oracle Cloud Infrastructure 2025 — **AI Foundations Associate**
-
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=Om20An00&show_icons=true&count_private=true&theme=tokyonight&hide_border=true&include_all_commits=true&bg_color=0d1117&title_color=a78bfa&icon_color=a78bfa&text_color=ffffff" height="170"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Om20An00&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=a78bfa&text_color=ffffff&langs_count=8" height="170"/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Om20An00&theme=tokyonight&hide_border=true&background=0d1117&ring=a78bfa&fire=a78bfa&currStreakLabel=a78bfa" height="170"/>
-
-</div>
-
----
-
-## 📈 Activity — Commits, Issues & Pull Requests
-
-<div align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Om20An00&theme=tokyo-night&hide_border=true&area=true&custom_title=Contribution%20Activity%20(Commits%20%C2%B7%20PRs%20%C2%B7%20Issues)" width="100%"/>
-
-</div>
-
----
-
-<div align="center">
-
-### 📬 Let's Connect
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/om-anand-dubey-283366229/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Om20An00)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:omanand2100@gmail.com)
-
-<br/>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=120&section=footer&text=Open%20to%20SDE%20%2F%20AI%20Engineer%20Opportunities&fontSize=20&fontColor=a78bfa&fontAlignY=65" />
-
-</div>
+<span class="c">// Build. Measure. Improve. Repeat.</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="stats reveal">
+          <div class="stat"><div class="stat-number">1500+</div><div class="stat-label">LeetCode problems</div></div>
+          <div class="stat"><div class="stat-number">2500+</div><div class="stat-label">DSA problems total</div></div>
+          <div class="stat"><div class="stat-number">0.1%</div><div class="stat-label">LeetCode global ranking</div></div>
+          <div class="stat"><div class="stat-number">5+</div><div class="stat-label">REST APIs at TCS</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker">01 / Selected work</div>
+          <h2>Projects built to solve real problems.</h2>
+          <p class="section-sub">A mix of backend systems, distributed infrastructure and AI applications — with a focus on reliability, observability and practical engineering.</p>
+        </div>
+
+        <div class="projects">
+          <article class="card project reveal">
+            <div class="project-top"><span class="project-icon">📊</span><span class="mono" style="color:#65718a;font-size:10px;">01</span></div>
+            <h3>AI Business Intelligence Platform</h3>
+            <p>Natural-language business analytics with SQL insights, ML churn prediction, demand forecasting and recommendations. FastAPI + XGBoost + PostgreSQL + Streamlit.</p>
+            <div class="tags"><span class="tag">FastAPI</span><span class="tag">XGBoost</span><span class="tag">PostgreSQL</span><span class="tag">Streamlit</span><span class="tag">Docker</span></div>
+            <a class="project-link" href="https://github.com/Om20An00/AI-Buisness-Intelligence-Platform" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="project-link" href="https://insightpilot-frontend.onrender.com/" target="_blank" rel="noreferrer">Live demo ↗</a>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project-top"><span class="project-icon">📩</span><span class="mono" style="color:#65718a;font-size:10px;">02</span></div>
+            <h3>Event-Driven Notification System</h3>
+            <p>Asynchronous notification architecture using Spring Boot and Kafka, with idempotent producers, DLQ-backed retries and Prometheus + Grafana observability.</p>
+            <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Kafka</span><span class="tag">Kubernetes</span><span class="tag">Grafana</span></div>
+            <a class="project-link" href="https://github.com/Om20An00/event-driven-notification-system" target="_blank" rel="noreferrer">View repository ↗</a>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project-top"><span class="project-icon">🔗</span><span class="mono" style="color:#65718a;font-size:10px;">03</span></div>
+            <h3>Distributed URL Shortener</h3>
+            <p>Go-based distributed URL shortener with Redis caching, PostgreSQL persistence, Kubernetes deployment, CI/CD and production-oriented monitoring.</p>
+            <div class="tags"><span class="tag">Go</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">Kubernetes</span><span class="tag">GitHub Actions</span></div>
+            <a class="project-link" href="https://github.com/Om20An00/go-url-shortener" target="_blank" rel="noreferrer">View repository ↗</a>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project-top"><span class="project-icon">🧠</span><span class="mono" style="color:#65718a;font-size:10px;">04</span></div>
+            <h3>Enterprise Knowledge Assistant</h3>
+            <p>RAG platform for natural-language querying over organizational documents using FastAPI, LangChain, pgvector and GPT-4o-mini with JWT-secured access.</p>
+            <div class="tags"><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">pgvector</span><span class="tag">OpenAI</span><span class="tag">FastAPI</span></div>
+            <a class="project-link" href="https://github.com/Om20An00" target="_blank" rel="noreferrer">GitHub profile ↗</a>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project-top"><span class="project-icon">🛒</span><span class="mono" style="color:#65718a;font-size:10px;">05</span></div>
+            <h3>Green Cart</h3>
+            <p>Full-stack grocery delivery platform with Docker containerization, Stripe payments and production deployment.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">Stripe</span><span class="tag">Docker</span></div>
+            <a class="project-link" href="https://github.com/Om20An00/greencart-deploy-public" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="project-link" href="https://greencart-deploy-8rrm.vercel.app/" target="_blank" rel="noreferrer">Live demo ↗</a>
+          </article>
+
+          <article class="card project reveal">
+            <div class="project-top"><span class="project-icon">🤖</span><span class="mono" style="color:#65718a;font-size:10px;">06</span></div>
+            <h3>Quick AI SaaS</h3>
+            <p>Full-stack AI content platform integrating Gemini, ClipDrop, Cloudinary and Clerk authentication in a PERN architecture.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">Gemini</span></div>
+            <a class="project-link" href="https://github.com/Om20An00/Quick-AI-Public" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="project-link" href="https://quick-ai-full-stack-liart.vercel.app/" target="_blank" rel="noreferrer">Live demo ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker">02 / Toolbox</div>
+          <h2>Technologies I build with.</h2>
+        </div>
+        <div class="stack">
+          <div class="card stack-card reveal"><h3>Languages</h3><div class="stack-items">Java · Go · Python · C++</div></div>
+          <div class="card stack-card reveal"><h3>Backend</h3><div class="stack-items">Spring Boot · FastAPI · REST APIs · Kafka · JPA/Hibernate · JUnit 5 · Mockito</div></div>
+          <div class="card stack-card reveal"><h3>Data</h3><div class="stack-items">PostgreSQL · MySQL · Redis · pgvector</div></div>
+          <div class="card stack-card reveal"><h3>AI / LLM</h3><div class="stack-items">OpenAI API · LangChain · RAG · Prompt Engineering · XGBoost</div></div>
+          <div class="card stack-card reveal"><h3>Cloud / DevOps</h3><div class="stack-items">Docker · Kubernetes · AWS · Jenkins · GitHub Actions · Linux</div></div>
+          <div class="card stack-card reveal"><h3>Observability</h3><div class="stack-items">Prometheus · Grafana · Metrics · Distributed systems</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker">03 / Experience</div>
+          <h2>Where I've been building.</h2>
+        </div>
+        <div class="timeline">
+          <div class="role reveal">
+            <div class="role-date">MAR 2026 — JUN 2026</div>
+            <h3>Assistant System Engineer Trainee</h3>
+            <div class="role-company">Tata Consultancy Services · Bengaluru</div>
+            <p>Built a Spring Boot backend with MySQL and JWT-based RBAC across three user roles, 5+ REST APIs for authentication and booking management, plus JUnit 5 and Mockito tests.</p>
+          </div>
+          <div class="role reveal">
+            <div class="role-date">AUG 2025 — JAN 2026</div>
+            <h3>Backend Engineer Intern</h3>
+            <div class="role-company">Sisuni Technology · Remote</div>
+            <p>Worked on backend REST APIs and authentication flows for an HRMS platform, including Spring Security and API documentation with Swagger/OpenAPI.</p>
+          </div>
+          <div class="role reveal">
+            <div class="role-date">MAY 2024 — JUL 2024</div>
+            <h3>Artificial Intelligence Intern</h3>
+            <div class="role-company">IBM SkillsBuild × AICTE</div>
+            <p>Built a Python machine-learning project for mental fitness prediction using Scikit-Learn and multiple regression models.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker">04 / Beyond code</div>
+          <h2>Competitive programming & leadership.</h2>
+        </div>
+        <div class="stats">
+          <div class="stat reveal"><div class="stat-number">1500+</div><div class="stat-label">LeetCode problems · Top 0.1% globally</div></div>
+          <div class="stat reveal"><div class="stat-number">1000+</div><div class="stat-label">GeeksforGeeks problems</div></div>
+          <div class="stat reveal"><div class="stat-number">2500+</div><div class="stat-label">Total DSA problems</div></div>
+          <div class="stat reveal"><div class="stat-number">GDSC</div><div class="stat-label">AI/ML Team Lead · mentoring & hackathons</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="kicker">05 / Let's connect</div>
+          <h2>Have a hard backend or AI problem? Let's build it.</h2>
+          <p>I'm open to software engineering, backend and AI engineering opportunities where I can build reliable systems and keep learning.</p>
+          <div class="actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="mailto:omanand2100@gmail.com">omanand2100@gmail.com ↗</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/om-anand-dubey-283366229/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="btn btn-secondary" href="https://github.com/Om20An00" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Om Anand Dubey</span>
+      <span class="mono">Built with HTML · CSS · curiosity</span>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById("nav");
+    window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 10));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
